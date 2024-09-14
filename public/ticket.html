@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ticket Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #6C5CE7;
+            --secondary-color: #A29BFE;
+            --background-color: #1E1E2E;
+            --text-color: #FFFFFF;
+            --card-bg-color: #2D2D44;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: var(--card-bg-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 3rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: var(--card-bg-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.2);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-details {
+            padding: 1.5rem;
+        }
+
+        .event-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .event-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .event-description {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        footer {
+            background-color: var(--card-bg-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Event Ticket Hub</a>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">Events</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="/images/music.jpg" alt="Summer Music Festival" class="event-image">
+                    <div class="event-details">
+                        <h2 class="event-title">Summer Music Festival</h2>
+                        <p class="event-date">July 15-17, 2024</p>
+                        <p class="event-description">Three days of non-stop music featuring top artists from around the world.</p>
+                        <a href="/?event=music-festival" class="btn">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/images/tech.jpg" alt="Tech Conference 2024" class="event-image">
+                    <div class="event-details">
+                        <h2 class="event-title">Tech Conference 2024</h2>
+                        <p class="event-date">September 5-7, 2024</p>
+                        <p class="event-description">The biggest tech conference of the year with keynotes from industry leaders.</p>
+                        <a href="/?event=tech-festival" class="btn">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/images/food.jpg" alt="Food & Wine Expo" class="event-image">
+                    <div class="event-details">
+                        <h2 class="event-title">Food & Wine Expo</h2>
+                        <p class="event-date">October 12-14, 2024</p>
+                        <p class="event-description">Indulge in culinary delights and exquisite wines from top chefs and sommeliers.</p>
+                        <a href="/?event=food-festival" class="btn">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/images/film.jpg" alt="International Film Festival" class="event-image">
+                    <div class="event-details">
+                        <h2 class="event-title">International Film Festival</h2>
+                        <p class="event-date">November 20-30, 2024</p>
+                        <p class="event-description">Showcasing the best in international cinema with premieres and special screenings.</p>
+                        <a href="/?event=film-festival" class="btn">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Event Ticket Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
