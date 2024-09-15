@@ -2680,9 +2680,9 @@ async function UseNow(){
 
 async function saveToIpfs(tokenId, tokenStatus) {
   const tokenImage = [
-    "/images/music.jpg",
     "/images/film.jpg",
     "/images/food.jpg",
+    "/images/music.jpg",
     "/images/tech.jpg",
   ];
 
